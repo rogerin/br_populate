@@ -1,3 +1,19 @@
+== Aviso
+
+Esse repositório é um fork de https://github.com/celsodantas/br_populate
+Eu apenas mudei para ele buscar o arquivo de estados e cidades do diretório "db" da aplicação Rails.
+É só fazer o download do arquivo states.json e colocar no diretório "db".
+
+Esse código funciona apenas em Ruby 1.9 e Rails 3.
+
+A principal parte alterada foi a seguinte:
+
+    def self.states
+      ActiveSupport::JSON.decode(Rails.root.join("db", "states.json"))
+    end
+
+Daqui para baixo são as instruções do repósito https://github.com/celsodantas/br_populate
+
 == Código Rails para Popular cidades e estados do Brasil
 
 É um código simples mas chato de se fazer. O que eu fiz foi só organizar um código (pra ser usado em um seed do Rails) pra popular as tabelas Estado e Cidades.
